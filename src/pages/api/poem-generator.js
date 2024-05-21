@@ -2,8 +2,10 @@ import Replicate from "replicate";
 
 export default async function handler(req, res) {
   const replicate = new Replicate({
-    auth: process.env.REPLICATE_API_TOKEN,
+    auth: process.env.NEXT_PUBLIC_REPLICATE_API_TOKEN,
   });
+
+  console.log(process.env.NEXT_PUBLIC_REPLICATE_API_TOKEN);
 
   try {
     const output = await replicate.run(
